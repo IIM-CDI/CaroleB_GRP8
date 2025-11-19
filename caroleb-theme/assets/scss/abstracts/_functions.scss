@@ -1,0 +1,31 @@
+// =============================================================================
+// Functions
+// =============================================================================
+
+@use 'sass:math';
+@use 'typography';
+@use 'components';
+
+// -----------------------------------------------------------------------------
+// Convert px to rem
+// -----------------------------------------------------------------------------
+@function rem($pixels, $context: 16px) {
+	@if (math.is-unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (math.is-unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return calc($pixels / $context) * 1rem;
+}
+
+// -----------------------------------------------------------------------------
+// Get a z-index value from a layer name
+// Example: z-index: z('modal');
+// This is a shorthand wrapper for the z-index() function
+// -----------------------------------------------------------------------------
+@function z($layer) {
+	@return components.z-index($layer);
+}

@@ -1,0 +1,50 @@
+// =============================================================================
+// Colors
+// =============================================================================
+
+@use 'sass:map';
+
+// Color palette map
+$colors: (
+	// Primary colors
+	'primary': #0073aa,
+	'secondary': #23282d,
+	// Neutral colors
+	'black': #000000,
+	'white': #ffffff,
+	'gray-dark': #333333,
+	'gray': #666666,
+	'gray-light': #cccccc,
+	'gray-lighter': #f5f5f5,
+	// Semantic colors
+	'success': #46b450,
+	'warning': #ffb900,
+	'danger': #dc3232,
+	'info': #00a0d2,
+	// Text colors
+	'text': #333333,
+	'text-light': #666666,
+	'link': #0073aa,
+	'link-hover': #005177,
+	// Background colors
+	'bg': #ffffff,
+	'bg-alt': #f5f5f5,
+	// Border colors
+	'border': #cccccc
+);
+
+// Generate CSS custom properties from the color map
+:root {
+	@each $name, $value in $colors {
+		--color-#{$name}: #{$value};
+	}
+}
+
+// Helper function to get colors
+@function color($name) {
+	@if not map.has-key($colors, $name) {
+		@warn "Color `#{$name}` not found in $colors map.";
+		@return null;
+	}
+	@return var(--color-#{$name});
+}

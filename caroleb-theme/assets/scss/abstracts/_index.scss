@@ -1,0 +1,15 @@
+// =============================================================================
+// Abstracts Index
+// Forward all abstracts for easy access with @use
+// =============================================================================
+
+// Variable modules (order matters - dependencies first)
+@forward 'colors';
+@forward 'spacing';
+@forward 'typography';
+@forward 'layout';
+@forward 'components';
+
+// Utility modules
+@forward 'functions';
+@forward 'mixins';

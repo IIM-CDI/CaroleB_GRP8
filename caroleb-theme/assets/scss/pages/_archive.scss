@@ -1,0 +1,36 @@
+// =============================================================================
+// Archive
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.archive,
+.blog,
+.search {
+	.posts-pagination {
+		margin-top: spacing('xl');
+		text-align: center;
+
+		.page-numbers {
+			display: inline-block;
+			padding: spacing('sm') spacing('md');
+			margin: 0 spacing('xs');
+			border: 1px solid color('border');
+			border-radius: border-radius();
+			@include transition(all);
+
+			&:hover,
+			&:focus {
+				background-color: color('primary');
+				color: color('white');
+				border-color: color('primary');
+			}
+
+			&.current {
+				background-color: color('primary');
+				color: color('white');
+				border-color: color('primary');
+			}
+		}
+	}
+}

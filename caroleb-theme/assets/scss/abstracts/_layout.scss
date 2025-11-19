@@ -1,0 +1,69 @@
+// =============================================================================
+// Layout
+// =============================================================================
+
+@use 'sass:map';
+
+// Container widths map
+$containers: (
+	'max-width': 1200px,
+	'padding': 1rem
+);
+
+// Breakpoints map
+$breakpoints: (
+	'xs': 480px,
+	'sm': 768px,
+	'md': 1024px,
+	'lg': 1280px,
+	'xl': 1440px
+);
+
+// Grid settings
+$grid: (
+	'columns': 12,
+	'gutter': 1rem
+);
+
+// Generate CSS custom properties
+:root {
+	// Container settings
+	@each $name, $value in $containers {
+		--container-#{$name}: #{$value};
+	}
+
+	// Breakpoints (for use in JavaScript)
+	@each $name, $value in $breakpoints {
+		--breakpoint-#{$name}: #{$value};
+	}
+
+	// Grid settings
+	@each $name, $value in $grid {
+		--grid-#{$name}: #{$value};
+	}
+}
+
+// Helper functions
+@function container($name) {
+	@if not map.has-key($containers, $name) {
+		@warn "Container setting `#{$name}` not found in $containers map.";
+		@return null;
+	}
+	@return var(--container-#{$name});
+}
+
+@function breakpoint($name) {
+	@if not map.has-key($breakpoints, $name) {
+		@warn "Breakpoint `#{$name}` not found in $breakpoints map.";
+		@return null;
+	}
+	@return map.get($breakpoints, $name);
+}
+
+@function grid($name) {
+	@if not map.has-key($grid, $name) {
+		@warn "Grid setting `#{$name}` not found in $grid map.";
+		@return null;
+	}
+	@return var(--grid-#{$name});
+}

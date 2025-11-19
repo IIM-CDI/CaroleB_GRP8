@@ -1,0 +1,39 @@
+// =============================================================================
+// Buttons
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.button,
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+	display: inline-block;
+	padding: spacing('sm') spacing('md');
+	background-color: color('primary');
+	color: color('white');
+	border: none;
+	border-radius: border-radius();
+	font-size: font-size('base');
+	font-weight: font-weight('medium');
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	@include transition(background-color);
+
+	&:hover,
+	&:focus {
+		background-color: color('link-hover');
+		color: color('white');
+	}
+
+	&:focus {
+		@include focus-outline;
+	}
+
+	&:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+}

@@ -1,0 +1,33 @@
+// =============================================================================
+// Spacing
+// =============================================================================
+
+@use 'sass:map';
+
+$spacing-unit: 1rem;
+
+// Spacing scale map
+$spacing: (
+	'xs': $spacing-unit * 0.25,  // 4px
+	'sm': $spacing-unit * 0.5,   // 8px
+	'md': $spacing-unit,         // 16px
+	'lg': $spacing-unit * 1.5,   // 24px
+	'xl': $spacing-unit * 2,     // 32px
+	'xxl': $spacing-unit * 3     // 48px
+);
+
+// Generate CSS custom properties from the spacing map
+:root {
+	@each $name, $value in $spacing {
+		--spacing-#{$name}: #{$value};
+	}
+}
+
+// Helper function to get spacing
+@function spacing($name) {
+	@if not map.has-key($spacing, $name) {
+		@warn "Spacing `#{$name}` not found in $spacing map.";
+		@return null;
+	}
+	@return var(--spacing-#{$name});
+}

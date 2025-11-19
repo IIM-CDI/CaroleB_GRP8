@@ -1,0 +1,155 @@
+// =============================================================================
+// Helper Classes
+// =============================================================================
+
+@use '../abstracts' as *;
+
+// Container
+.container {
+	@include container;
+}
+
+// Text alignment
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+// Display utilities
+.d-block {
+	display: block;
+}
+
+.d-inline-block {
+	display: inline-block;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-none {
+	display: none;
+}
+
+// Margin utilities
+.mt-0 {
+	margin-top: 0;
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+
+.mt-sm {
+	margin-top: spacing('sm');
+}
+
+.mt-md {
+	margin-top: spacing('md');
+}
+
+.mt-lg {
+	margin-top: spacing('lg');
+}
+
+.mb-sm {
+	margin-bottom: spacing('sm');
+}
+
+.mb-md {
+	margin-bottom: spacing('md');
+}
+
+.mb-lg {
+	margin-bottom: spacing('lg');
+}
+
+// Padding utilities
+.p-sm {
+	padding: spacing('sm');
+}
+
+.p-md {
+	padding: spacing('md');
+}
+
+.p-lg {
+	padding: spacing('lg');
+}
+
+// WordPress alignment classes
+.alignleft {
+	float: left;
+	margin-right: spacing('md');
+	margin-bottom: spacing('md');
+}
+
+.alignright {
+	float: right;
+	margin-left: spacing('md');
+	margin-bottom: spacing('md');
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.alignnone {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+// WordPress caption
+.wp-caption {
+	max-width: 100%;
+
+	img {
+		display: block;
+		margin-bottom: spacing('sm');
+	}
+}
+
+.wp-caption-text {
+	font-size: font-size('small');
+	color: color('text-light');
+	text-align: center;
+}
+
+// WordPress gallery
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: spacing('md');
+	margin-bottom: spacing('lg');
+}
+
+.gallery-item {
+	margin: 0;
+}
+
+.gallery-caption {
+	font-size: font-size('small');
+	color: color('text-light');
+	text-align: center;
+	margin-top: spacing('sm');
+}
+
+// Sticky post
+.sticky {
+	// Add styles for sticky posts
+}
+
+// Clearfix
+.clearfix {
+	@include clearfix;
+}

@@ -1,0 +1,56 @@
+// =============================================================================
+// Forms
+// =============================================================================
+
+@use '../abstracts' as *;
+
+form {
+	margin-bottom: spacing('md');
+}
+
+label {
+	display: block;
+	margin-bottom: spacing('xs');
+	font-weight: font-weight('medium');
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+	width: 100%;
+	padding: spacing('sm');
+	border: 1px solid color('border');
+	border-radius: border-radius();
+	font-size: font-size('base');
+	@include transition(border-color);
+
+	&:focus {
+		border-color: color('primary');
+		@include focus-outline;
+	}
+}
+
+textarea {
+	min-height: 120px;
+	resize: vertical;
+}
+
+.search-form {
+	display: flex;
+	gap: spacing('sm');
+
+	.search-field {
+		flex: 1;
+	}
+
+	.search-submit {
+		flex: 0 0 auto;
+	}
+}

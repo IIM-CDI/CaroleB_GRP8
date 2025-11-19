@@ -1,0 +1,30 @@
+{
+	"name": "wp-b2/theme",
+	"description": "A blank WordPress classic theme for learning WordPress theming",
+	"type": "wordpress-theme",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Your Name",
+			"email": "your.email@example.com"
+		}
+	],
+	"require": {
+		"php": ">=7.4"
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.7",
+		"wp-coding-standards/wpcs": "^3.0",
+		"phpcompatibility/phpcompatibility-wp": "^2.1",
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+	},
+	"scripts": {
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}

@@ -1,0 +1,92 @@
+// =============================================================================
+// Component Variables
+// =============================================================================
+
+@use 'sass:map';
+
+// Border radius map
+$border-radius: (
+	'sm': 3px,
+	'base': 5px,
+	'lg': 10px
+);
+
+// Box shadows map
+$box-shadows: (
+	'sm': (0 1px 3px rgba(0, 0, 0, 0.1)),
+	'base': (0 2px 6px rgba(0, 0, 0, 0.1)),
+	'lg': (0 4px 12px rgba(0, 0, 0, 0.15))
+);
+
+// Transitions
+$transitions: (
+	'speed': 0.3s,
+	'timing': ease-in-out
+);
+
+// Z-index layers map
+$z-indexes: (
+	'dropdown': 1000,
+	'sticky': 1020,
+	'fixed': 1030,
+	'modal-backdrop': 1040,
+	'modal': 1050,
+	'popover': 1060,
+	'tooltip': 1070
+);
+
+// Generate CSS custom properties
+:root {
+	// Border radius
+	@each $name, $value in $border-radius {
+		--border-radius-#{$name}: #{$value};
+	}
+
+	// Box shadows
+	@each $name, $value in $box-shadows {
+		--box-shadow-#{$name}: #{$value};
+	}
+
+	// Transitions
+	@each $name, $value in $transitions {
+		--transition-#{$name}: #{$value};
+	}
+
+	// Z-indexes
+	@each $name, $value in $z-indexes {
+		--z-index-#{$name}: #{$value};
+	}
+}
+
+// Helper functions
+@function border-radius($name: 'base') {
+	@if not map.has-key($border-radius, $name) {
+		@warn "Border radius `#{$name}` not found in $border-radius map.";
+		@return null;
+	}
+	@return var(--border-radius-#{$name});
+}
+
+@function box-shadow($name: 'base') {
+	@if not map.has-key($box-shadows, $name) {
+		@warn "Box shadow `#{$name}` not found in $box-shadows map.";
+		@return null;
+	}
+	@return var(--box-shadow-#{$name});
+}
+
+@function transition($name) {
+	@if not map.has-key($transitions, $name) {
+		@warn "Transition `#{$name}` not found in $transitions map.";
+		@return null;
+	}
+	@return var(--transition-#{$name});
+}
+
+@function z-index($name) {
+	@if not map.has-key($z-indexes, $name) {
+		@warn "Z-index `#{$name}` not found in $z-indexes map.";
+		@return null;
+	}
+	@return var(--z-index-#{$name});
+}

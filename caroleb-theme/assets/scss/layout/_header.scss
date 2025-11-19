@@ -1,0 +1,49 @@
+// =============================================================================
+// Header
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.site-header {
+	padding: spacing('lg') 0;
+	background-color: color('white');
+	border-bottom: 1px solid color('border');
+
+	.container {
+		@include flex-between;
+	}
+}
+
+.site-branding {
+	flex: 0 0 auto;
+
+	.site-title {
+		margin: 0;
+		font-size: font-size('h3');
+
+		a {
+			@include link-reset;
+			color: color('text');
+
+			&:hover,
+			&:focus {
+				color: color('primary');
+			}
+		}
+	}
+
+	.site-description {
+		margin: 0;
+		font-size: font-size('small');
+		color: color('text-light');
+	}
+
+	.custom-logo-link {
+		display: block;
+	}
+
+	.custom-logo {
+		max-height: 60px;
+		width: auto;
+	}
+}

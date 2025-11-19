@@ -1,0 +1,39 @@
+// =============================================================================
+// Footer
+// =============================================================================
+
+@use '../abstracts' as *;
+
+.site-footer {
+	padding: spacing('xl') 0;
+	margin-top: spacing('xxl');
+	background-color: color('bg-alt');
+	border-top: 1px solid color('border');
+}
+
+.footer-widgets {
+	margin-bottom: spacing('lg');
+}
+
+.site-info {
+	text-align: center;
+
+	.footer-navigation {
+		margin-bottom: spacing('md');
+
+		.footer-menu {
+			display: flex;
+			justify-content: center;
+			gap: spacing('md');
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.copyright {
+		margin: 0;
+		font-size: font-size('small');
+		color: color('text-light');
+	}
+}

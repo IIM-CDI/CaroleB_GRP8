@@ -1,0 +1,90 @@
+// =============================================================================
+// Cards
+// =============================================================================
+
+@use '../abstracts' as *;
+
+article {
+	margin-bottom: spacing('xl');
+	padding-bottom: spacing('xl');
+	border-bottom: 1px solid color('border');
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.entry-header {
+	margin-bottom: spacing('md');
+
+	.entry-title {
+		margin-bottom: spacing('sm');
+
+		a {
+			@include link-reset;
+			color: color('text');
+			@include transition(color);
+
+			&:hover,
+			&:focus {
+				color: color('primary');
+			}
+		}
+	}
+
+	.entry-meta {
+		font-size: font-size('small');
+		color: color('text-light');
+
+		a {
+			color: inherit;
+
+			&:hover,
+			&:focus {
+				color: color('primary');
+			}
+		}
+	}
+}
+
+.post-thumbnail {
+	margin-bottom: spacing('md');
+	overflow: hidden;
+	border-radius: border-radius();
+
+	img {
+		@include transition(transform);
+	}
+
+	&:hover img {
+		transform: scale(1.05);
+	}
+}
+
+.entry-content,
+.entry-summary {
+	margin-bottom: spacing('md');
+}
+
+.entry-footer {
+	font-size: font-size('small');
+	color: color('text-light');
+
+	span {
+		margin-right: spacing('md');
+	}
+}
+
+.page-header {
+	margin-bottom: spacing('xl');
+	padding-bottom: spacing('md');
+	border-bottom: 2px solid color('border');
+
+	.page-title {
+		margin-bottom: spacing('sm');
+	}
+
+	.archive-description {
+		color: color('text-light');
+	}
+}

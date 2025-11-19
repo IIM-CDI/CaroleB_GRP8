@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build files
+assets/css/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Package lock files (optional - uncomment if you want to ignore)
+# package-lock.json
+# composer.lock

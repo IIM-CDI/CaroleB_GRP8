@@ -1,0 +1,137 @@
+// =============================================================================
+// Reset
+// Additional resets beyond normalize.css
+// =============================================================================
+
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: font-size('base');
+}
+
+body {
+	margin: 0;
+	font-family: font-family('primary');
+	font-size: font-size('base');
+	font-weight: font-weight('normal');
+	line-height: line-height('base');
+	color: color('text');
+	background-color: color('bg');
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Remove default margin from common elements
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+// Reset list styles
+ul,
+ol {
+	list-style: none;
+}
+
+// Remove default link styles
+a {
+	color: color('link');
+	text-decoration: none;
+	@include transition(color);
+
+	&:hover,
+	&:focus {
+		color: color('link-hover');
+	}
+
+	&:focus {
+		@include focus-outline;
+	}
+}
+
+// Images
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+// Form elements
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+// Remove default appearance for form elements
+input,
+textarea,
+select {
+	&:focus {
+		outline: none;
+		@include focus-outline;
+	}
+}
+
+// Tables
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// Screen reader text
+.screen-reader-text {
+	@include visually-hidden;
+
+	&:focus {
+		position: static;
+		width: auto;
+		height: auto;
+		margin: 0;
+		overflow: visible;
+		clip: auto;
+		white-space: normal;
+	}
+}
+
+// Skip link
+.skip-link {
+	@include visually-hidden;
+
+	&:focus {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: z('tooltip');
+		padding: spacing('sm') spacing('md');
+		background-color: color('primary');
+		color: color('white');
+		text-decoration: none;
+	}
+}

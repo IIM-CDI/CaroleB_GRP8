@@ -1,0 +1,36 @@
+/*!
+ * WP-B2 Theme Styles
+ * Main SCSS file following the 7-1 pattern architecture
+ * Using modern @use and @forward syntax
+ */
+
+// 1. Abstracts - Variables, functions, mixins, placeholders
+// Use abstracts throughout the file (with wildcard namespace for direct access)
+@use 'abstracts' as *;
+
+// 2. Vendors - Third-party styles (normalize, bootstrap, etc.)
+@use 'vendors/normalize';
+
+// 3. Base - Basic styles, typography, reset
+@use 'base/reset';
+@use 'base/typography';
+@use 'base/helpers';
+
+// 4. Layout - Major layout components
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/navigation';
+@use 'layout/grid';
+
+// 5. Components - Smaller reusable components
+@use 'components/buttons';
+@use 'components/forms';
+@use 'components/cards';
+
+// 6. Pages - Page-specific styles
+@use 'pages/home';
+@use 'pages/single';
+@use 'pages/archive';
+
+// 7. Themes - Theme-specific styles (if multiple themes)
+// @use 'themes/default';
