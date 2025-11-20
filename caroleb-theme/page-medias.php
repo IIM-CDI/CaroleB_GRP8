@@ -1,4 +1,5 @@
 <?php
+// ceci est la page media
 
 get_header();
 
