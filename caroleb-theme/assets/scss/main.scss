@@ -28,9 +28,14 @@
 @use 'components/cards';
 
 // 6. Pages - Page-specific styles
-@use 'pages/home';
-@use 'pages/single';
-@use 'pages/archive';
+@use "pages/actu";
+@use "pages/archive";
+@use "pages/bio";
+@use "pages/contact";
+@use "pages/galerie";
+@use "pages/home";
+@use "pages/medias";
+@use "pages/single";
 
 // 7. Themes - Theme-specific styles (if multiple themes)
 // @use 'themes/default';
